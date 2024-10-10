@@ -30,6 +30,18 @@ public class LetterCombinationFrequency {
         return content.toString();
     }
 
+    public  <K, V extends Comparable<V>> LinkedHashMap<K, V> sortByValue(HashMap<K, V> map) {
+        List<Map.Entry<K, V>> list = new ArrayList<>(map.entrySet());
+        list.sort((e1, e2) -> e2.getValue().compareTo(e1.getValue()));
+        LinkedHashMap<K, V> sortedMap = new LinkedHashMap<>();
+        
+        for (Map.Entry<K, V> entry : list) {
+            sortedMap.put(entry.getKey(), entry.getValue());
+        }
+        
+        return sortedMap;  
+    }
+
     
 
 
